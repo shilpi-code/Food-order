@@ -2,9 +2,25 @@ import React from "react";
 import Logo from "../img/logo.png";
 import Avatar from '../img/avatar.png'
 import { MdShoppingBasket } from "react-icons/md";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../firebase.config";
 import { motion } from "framer-motion";
+import { actionType } from "../context/reducer";
+import { useStateValue } from "../context/StateProvider";
 
 const Header = () => {
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const [{user}, dispatch] = useStateValue();
+
+  const login= async() =>{
+    const {user : {refreshToken, providerData}}= await signInWithPopup(firebaseAuth, provider);
+    dispatch({
+      type: actionType.SET_USER,
+      user: providerData[0]
+    });
+    localStorage.setItem("user", JSON.stringify(providerData[0]));
+  }
   return (
     <>
       <div className="fixed z-50 w-screen p-6 px-16">
@@ -31,12 +47,15 @@ const Header = () => {
           </ul>
           <div className="relative flex justify-center items-center">
             <MdShoppingBasket className="text-textColor text-2xl ml-2 cursor-pointer" />
-            <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full h-8 w-8 bg-cartNumBg">
+            <div className="absolute -top-2 -right-2 rounded-full h-8 w-8 bg-cartNumBg flex items-center justify-center">
               <p className="text-xs text-white font-semibold">2</p>
             </div>
           </div>
+          <div className="relative">
           <motion.img
-              whileTap={{ scale: 0.6 }} src={Avatar} className="w-10 ml-2 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer" alt="user-profile" />
+              whileTap={{ scale: 0.6 }} src={user? user.photoURL: Avatar} className="w-10 ml-2 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full" alt="user-profile"
+              onClick={login} />
+          </div>
         </div>
         {/* For mobile */}
         <div className="block md:hidden w-full h-full p-4"></div>
