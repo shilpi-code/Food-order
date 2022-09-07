@@ -4,6 +4,7 @@ import MenuContainer from "./MenuContainer";
 import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import RowContainer from "./RowContainer";
+import CartContainer from "./CartContainer";
 import { useStateValue } from "../context/StateProvider";
 
 function MainContainer() {
@@ -46,6 +47,7 @@ function MainContainer() {
     </section>
 
     <MenuContainer />
+    <CartContainer />
 
     {/* {cartShow && <CartContainer />} */}
   </div>

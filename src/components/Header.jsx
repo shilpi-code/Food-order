@@ -37,7 +37,7 @@ const Header = () => {
       user: null,
     });
   };
-  console.log(user.photoURL);
+  // console.log(user.photoURL);
   return (
     <>
       <header className="fixed z-50 w-screen bg-primary px-4 md:p-6 md:px-16">
@@ -183,3 +183,4 @@ const Header = () => {
 };
 
 export default Header;
+
