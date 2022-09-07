@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
   const [isMenu, setIsMenu] = useState(false);
 
   const login = async () => {
@@ -38,6 +38,14 @@ const Header = () => {
     });
   };
   // console.log(user.photoURL);
+  
+  const showCart = () => {
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow: !cartShow,
+    });
+  };
+
   return (
     <>
       <header className="fixed z-50 w-screen bg-primary px-4 md:p-6 md:px-16">
@@ -69,12 +77,19 @@ const Header = () => {
                 Service
               </li>
             </motion.ul>
-            <div className="relative flex justify-center items-center">
-              <MdShoppingBasket className="text-textColor text-2xl ml-2 cursor-pointer" />
-              <div className="absolute -top-5 -right-3 rounded-full h-8 w-8 bg-cartNumBg flex items-center justify-center">
-                <p className="text-xs text-white font-semibold">2</p>
+            <div
+            className="relative flex items-center justify-center"
+            onClick={showCart}
+          >
+            <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer" />
+            {cartItems && cartItems.length > 0 && (
+              <div className=" absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
+                <p className="text-xs text-white font-semibold">
+                  {cartItems.length}
+                </p>
               </div>
-            </div>
+            )}
+          </div>
             <div className="relative">
               <motion.img
                 whileTap={{ scale: 0.6 }}
@@ -115,12 +130,20 @@ const Header = () => {
         </div>
         {/* For mobile */}
         <div className="flex items-center justify-between md:hidden w-full h-full p-4">
-        <div className="relative flex justify-center items-center">
-              <MdShoppingBasket className="text-textColor text-2xl ml-2 cursor-pointer" />
-              <div className="absolute -top-5 -right-3 rounded-full h-8 w-8 bg-cartNumBg flex items-center justify-center">
-                <p className="text-xs text-white font-semibold">2</p>
-              </div>
+        <div
+          className="relative flex items-center justify-center"
+          onClick={showCart}
+        >
+          <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer" />
+          {cartItems && cartItems.length > 0 && (
+            <div className=" absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
+              <p className="text-xs text-white font-semibold">
+                {cartItems.length}
+              </p>
             </div>
+          )}
+        </div>
+
           <Link to={"/"} className="flex items-center gap-2">
             <img src={Logo} className="w-10 object-cover" alt="Logo" />
             <p className="text-xl font-bold">City</p>
