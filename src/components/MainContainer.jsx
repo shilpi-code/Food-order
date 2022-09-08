@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HomeContainer from "./HomeContainer";
 import MenuContainer from "./MenuContainer";
 import { motion } from "framer-motion";
@@ -8,9 +8,11 @@ import CartContainer from "./CartContainer";
 import { useStateValue } from "../context/StateProvider";
 
 function MainContainer() {
-  const [{ foodItems }, dispatch] = useStateValue();
+  const [{ foodItems, cartShow }, dispatch] = useStateValue();
   console.log('jjjjj',foodItems);
   const [scrollValue, setScrollValue] = useState(0);
+
+  useEffect(() => {}, [scrollValue, cartShow]);
 
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center ">
@@ -26,14 +28,14 @@ function MainContainer() {
           <motion.div
             whileTap={{ scale: 0.75 }}
             className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer  hover:shadow-lg flex items-center justify-center"
-            onClick={() => setScrollValue(-200)}
+            onClick={() => setScrollValue(prevValue => prevValue - 200)}
           >
             <MdChevronLeft className="text-lg text-white" />
           </motion.div>
           <motion.div
             whileTap={{ scale: 0.75 }}
             className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg flex items-center justify-center"
-            onClick={() => setScrollValue(200)}
+            onClick={() => setScrollValue(prevValue => prevValue + 200)}
           >
             <MdChevronRight className="text-lg text-white" />
           </motion.div>
@@ -47,9 +49,8 @@ function MainContainer() {
     </section>
 
     <MenuContainer />
-    <CartContainer />
 
-    {/* {cartShow && <CartContainer />} */}
+    {cartShow && <CartContainer />}
   </div>
 );
 };
