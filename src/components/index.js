@@ -4,5 +4,6 @@ export {default as CreateContainer} from './CreateContainer';
 export {default as HomeContainer} from './HomeContainer';
 export {default as MenuContainer} from './MenuContainer';
 export {default as CartContainer} from './CartContainer';
+export {default as CheckoutPage} from './CheckoutPage';
 export {default as CartItem} from './CartItem';
 export {default as Loader} from './Loader';

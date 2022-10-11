@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from 'react'
-import {Header, CreateContainer, MainContainer} from './components'
+import {Header, CreateContainer, MainContainer, CheckoutPage} from './components'
 import {Route, Routes} from 'react-router-dom';
 import { AnimatePresence } from "framer-motion";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
@@ -10,7 +10,7 @@ export const App = () => {
   const [ {}, dispatch] = useStateValue();
   const fetchData= async()=>{
       await getAllFoodItems().then((data)=>{
-        console.log(data);
+        console.log('lllll',data);
         dispatch({
           type: actionType.SET_FOOD_ITEMS,
           foodItems: data,
@@ -29,6 +29,7 @@ export const App = () => {
          <Routes>
          <Route path='/*' element={<MainContainer />} />
            <Route path='/createItem' element={<CreateContainer />} />
+           <Route path='/checkout' element={<CheckoutPage />} />
          </Routes>
        </main>
      </div>

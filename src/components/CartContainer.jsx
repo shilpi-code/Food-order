@@ -7,6 +7,7 @@ import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 import EmptyCart from "../img/emptyCart.svg";
 import CartItem from "./CartItem";
+import {Link} from 'react-router-dom'
 
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
@@ -98,6 +99,7 @@ const CartContainer = () => {
             </div>
 
             {user ? (
+              <Link to='/checkout' className='w-full'>
               <motion.button
                 whileTap={{ scale: 0.8 }}
                 type="button"
@@ -105,6 +107,7 @@ const CartContainer = () => {
               >
                 Check Out
               </motion.button>
+              </Link>
             ) : (
               <motion.button
                 whileTap={{ scale: 0.8 }}
