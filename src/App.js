@@ -10,7 +10,6 @@ export const App = () => {
   const [ {}, dispatch] = useStateValue();
   const fetchData= async()=>{
       await getAllFoodItems().then((data)=>{
-        console.log('lllll',data);
         dispatch({
           type: actionType.SET_FOOD_ITEMS,
           foodItems: data,

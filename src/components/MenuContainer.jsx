@@ -8,7 +8,6 @@ import { useStateValue } from "../context/StateProvider";
 const MenuContainer = () => {
   const [filter, setFilter] = useState("chicken");
   const [{ foodItems }, dispatch] = useStateValue();
-  console.log('kkkk',foodItems);
 
   return (
     <section className="w-full my-6" id="menu">

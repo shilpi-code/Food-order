@@ -9,7 +9,6 @@ import { useStateValue } from "../context/StateProvider";
 
 function MainContainer() {
   const [{ foodItems, cartShow }, dispatch] = useStateValue();
-  console.log('jjjjj',foodItems);
   const [scrollValue, setScrollValue] = useState(0);
 
   useEffect(() => {}, [scrollValue, cartShow]);
