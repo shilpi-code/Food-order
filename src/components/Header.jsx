@@ -10,6 +10,7 @@ import Avatar from "../img/avatar.png";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
+import CreateContainer from "./CreateContainer";
 
 const Header = () => {
   const firebaseAuth = getAuth(app);
@@ -110,7 +111,7 @@ const Header = () => {
                 exit={{ opacity: 0, scale: 0.6 }}
                 className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0"
               >
-                {user && user.email === "vetrivel.galaxy@gmail.com" && (
+                {user && user.email === "shilpijain.collegedunia@gmail.com" && (
                   <Link to={"/createItem"}>
                     <p
                       className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
@@ -170,7 +171,7 @@ const Header = () => {
               className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0"
             >
               {user && user.email === "vetrivel.galaxy@gmail.com" && (
-                <Link to={"/createItem"}>
+                <Link to={"www.google.com"}>
                   <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
                     New Item <MdAdd />
                   </p>
@@ -186,9 +187,16 @@ const Header = () => {
                 </li>
                 <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
-                  onClick={() => setIsMenu(false)}
+                  onClick={() =>setIsMenu(false)}
                 >
-                  Menu
+                  <a href="www.google.com">
+                    <p
+                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
+                      onClick={() => setIsMenu(false)}
+                    >
+                      Menu<MdAdd />
+                    </p>
+                  </a>
                 </li>
                 <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"

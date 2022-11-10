@@ -1,7 +1,7 @@
 import I1 from "../img/i1.png";
-import F1 from "../img/c3.png";
+import F1 from "../img/f1.png";
 import C3 from "../img/c3.png";
-import Fi1 from "../img/c3.png";
+import R1 from "../img/r4.png";
 
 export const heroData = [
   {
@@ -27,10 +27,10 @@ export const heroData = [
   },
   {
     id: 4,
-    name: "Fish Kebab",
-    decp: "Mixed Fish Kebab",
-    price: "5.25",
-    imageSrc: Fi1,
+    name: "Curry",
+    decp: "Butter Curry",
+    price: "3.0",
+    imageSrc: R1,
   },
 ];
 
@@ -40,25 +40,25 @@ export const categories = [
     name: "Chicken",
     urlParamName: "chicken",
   },
-  {
+   {
     id: 2,
+    name: "Fruits",
+    urlParamName: "fruits",
+  },
+  {
+    id: 3,
     name: "Curry",
     urlParamName: "curry",
   },
   {
-    id: 3,
+    id: 4,
     name: "Rice",
     urlParamName: "rice",
   },
   {
-    id: 4,
+    id: 5,
     name: "Fish",
     urlParamName: "fish",
-  },
-  {
-    id: 5,
-    name: "Fruits",
-    urlParamName: "fruits",
   },
   {
     id: 6,
