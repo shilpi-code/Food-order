@@ -27,8 +27,8 @@ export const heroData = [
   },
   {
     id: 4,
-    name: "Curry",
-    decp: "Butter Curry",
+    name: "Rice",
+    decp: "Veg Pulao",
     price: "3.0",
     imageSrc: R1,
   },
