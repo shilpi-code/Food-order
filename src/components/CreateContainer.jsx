@@ -1,20 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  MdFastfood,
-  MdCloudUpload,
-  MdDelete,
-  MdFoodBank,
-  MdAttachMoney,
-} from "react-icons/md";
+import { MdFastfood, MdCloudUpload, MdDelete, MdFoodBank, MdAttachMoney} from "react-icons/md";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
-import {
-  deleteObject,
-  getDownloadURL,
-  ref,
-  uploadBytesResumable,
-} from "firebase/storage";
+import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../firebase.config";
 import { saveItem } from "../utils/firebaseFunctions";
 
