@@ -19,7 +19,10 @@ const Header = () => {
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
   const [isMenu, setIsMenu] = useState(false);
-  const [color, setColor]=useState('black');
+  const [home, setHome]=useState('black');
+  const [menu, setMenu]=useState('black');
+  const [about, setAbout]=useState('black');
+  const [contact, setContact]=useState('black');
 
   const login = async () => {
     if (!user) {
@@ -70,18 +73,18 @@ const Header = () => {
             className="flex items-center gap-24"
           >
              
-            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer "
             >
-            <a href="#home"><p onMouseEnter={() => setColor('red')}> Home</p> </a>
+            <a href="#home"><p style={{color:home}} onMouseEnter={() => setHome('#f97316')} onMouseLeave={()=>setHome('black')}> Home</p> </a>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-            <a href="#menu">Menu</a>
+            <a href="#menu"><p style={{color:menu}} onMouseEnter={() => setMenu('#f97316')} onMouseLeave={()=>setMenu('black')}> Menu</p></a>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              About Us
+            <a href="#home"><p style={{color:about}} onMouseEnter={() => setAbout('#f97316')} onMouseLeave={()=>setAbout('black')}> About Us</p></a>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              <a href="#contact-us">Contact Us</a>
+              <a href="#contact-us"><p style={{color:contact}} onMouseEnter={() => setContact('#f97316')} onMouseLeave={()=>setContact('black')}> Contact Us</p></a>
             </li>
           </motion.ul>
 
