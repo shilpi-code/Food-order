@@ -3,7 +3,7 @@ import HomeContainer from "./HomeContainer";
 import MenuContainer from "./MenuContainer";
 import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import RowContainer from "./RowContainer";
+import ScrollBar from "./ScrollBar";
 import CartContainer from "./CartContainer";
 import { useStateValue } from "../context/StateProvider";
 import { Link } from "react-router-dom";
@@ -43,7 +43,7 @@ function MainContainer() {
             </motion.div>
           </div>
         </div>
-        <RowContainer
+        <ScrollBar
           scrollValue={scrollValue}
           flag={true}
           data={foodItems?.filter((n) => n.category === "fruits")}

@@ -5,7 +5,7 @@ import NotFound from "../img/NotFound.svg";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
-function RowContainer({ flag, data, scrollValue }) {
+function ScrollBar({ flag, data, scrollValue }) {
   const rowContainer = useRef();
 
   const [items, setItems] = useState([]);
@@ -91,4 +91,4 @@ function RowContainer({ flag, data, scrollValue }) {
   );
 }
 
-export default RowContainer;
+export default ScrollBar;

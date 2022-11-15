@@ -19,10 +19,10 @@ const Header = () => {
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
   const [isMenu, setIsMenu] = useState(false);
-  const [home, setHome]=useState('black');
-  const [menu, setMenu]=useState('black');
-  const [about, setAbout]=useState('black');
-  const [contact, setContact]=useState('black');
+  const [home, setHome] = useState("black");
+  const [menu, setMenu] = useState("black");
+  const [about, setAbout] = useState("black");
+  const [contact, setContact] = useState("black");
 
   const login = async () => {
     if (!user) {
@@ -72,19 +72,49 @@ const Header = () => {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-24"
           >
-             
-            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer "
-            >
-            <a href="#home"><p style={{color:home}} onMouseEnter={() => setHome('#f97316')} onMouseLeave={()=>setHome('black')}> Home</p> </a>
+            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer ">
+              <a href="#home">
+                <p
+                  style={{ color: home }}
+                  onMouseEnter={() => setHome("#f97316")}
+                  onMouseLeave={() => setHome("black")}
+                >
+                  Home
+                </p>
+              </a>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-            <a href="#menu"><p style={{color:menu}} onMouseEnter={() => setMenu('#f97316')} onMouseLeave={()=>setMenu('black')}> Menu</p></a>
+              <a href="#menu">
+                <p
+                  style={{ color: menu }}
+                  onMouseEnter={() => setMenu("#f97316")}
+                  onMouseLeave={() => setMenu("black")}
+                >
+                  Menu
+                </p>
+              </a>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-            <a href="#home"><p style={{color:about}} onMouseEnter={() => setAbout('#f97316')} onMouseLeave={()=>setAbout('black')}> About Us</p></a>
+              <a href="#about-us">
+                <p
+                  style={{ color: about }}
+                  onMouseEnter={() => setAbout("#f97316")}
+                  onMouseLeave={() => setAbout("black")}
+                >
+                  About Us
+                </p>
+              </a>
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              <a href="#contact-us"><p style={{color:contact}} onMouseEnter={() => setContact('#f97316')} onMouseLeave={()=>setContact('black')}> Contact Us</p></a>
+              <a href="#contact-us">
+                <p
+                  style={{ color: contact }}
+                  onMouseEnter={() => setContact("#f97316")}
+                  onMouseLeave={() => setContact("black")}
+                >
+                  Contact Us
+                </p>
+              </a>
             </li>
           </motion.ul>
 
@@ -177,7 +207,7 @@ const Header = () => {
               className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0"
             >
               {user && user.email === "shilpijain.collegedunia@gmail.com" && (
-                 <Link to={"/createItem"}>
+                <Link to={"/createItem"}>
                   <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
                     New Item <MdAdd />
                   </p>
@@ -185,33 +215,58 @@ const Header = () => {
               )}
 
               <ul className="flex flex-col ">
-                <li
-                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
-                  
-                >
-                <Link to={"www.google.com"}>Home</Link>
-                </li>
-                <li
-                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
-                  onClick={() =>setIsMenu(false)}
-                >
-                  <a href="www.google.com">
+                <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2">
+                  <a href="#home">
                     <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
-                      onClick={() => setIsMenu(false)}
+                      style={{ color: home }}
+                      onMouseEnter={() => setHome("#f97316")}
+                      onMouseLeave={() => setHome("black")}
                     >
-                      Menu<MdAdd />
+                      Home
                     </p>
                   </a>
                 </li>
                 <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
-                  // onClick={() => setIsMenu(false)}
+                  onClick={() => setIsMenu(false)}
                 >
-                  About Us
+                  <a href="#menu">
+                    <p
+                      style={{ color: menu }}
+                      onMouseEnter={() => setMenu("#f97316")}
+                      onMouseLeave={() => setMenu("black")}
+                    >
+                      Menu
+                    </p>
+                  </a>
                 </li>
-                <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                  <a href="#contact-us">Contact Us</a>
+                <li
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  <a href="#about-us">
+                    <p
+                      style={{ color: about }}
+                      onMouseEnter={() => setAbout("#f97316")}
+                      onMouseLeave={() => setAbout("black")}
+                    >
+                      About Us
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  <a href="#contact-us">
+                    <p
+                      style={{ color: contact }}
+                      onMouseEnter={() => setContact("#f97316")}
+                      onMouseLeave={() => setContact("black")}
+                    >
+                      Contact Us
+                    </p>
+                  </a>
                 </li>
               </ul>
 

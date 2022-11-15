@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoFastFood } from "react-icons/io5";
 import { categories } from "../utils/data";
 import { motion } from "framer-motion";
-import RowContainer from "./RowContainer";
+import ScrollBar from "./ScrollBar";
 import { useStateValue } from "../context/StateProvider";
 
 const MenuContainer = () => {
@@ -55,7 +55,7 @@ const MenuContainer = () => {
             ))}
         </div>
         <div className="w-full">
-          <RowContainer
+          <ScrollBar
             flag={false}
             data={foodItems?.filter((n) => n.category == filter)}
           />

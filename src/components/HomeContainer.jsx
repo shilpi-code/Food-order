@@ -31,11 +31,11 @@ const HomeContainer = () => {
         </p>
 
         <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
-          eaque fugit distinctio est nam voluptatum architecto, porro iusto
-          deserunt recusandae ipsa minus eos sunt, dolores illo repellat facere
-          suscipit!
-        </p>
+          We deliver the best quality food items in just a few minutes at your 
+          doorstep. At Foodstopshop, you can find every item be it raw vegetables,
+          fruits, vegetarian cooked food, non-vegetarian cooked meal, soft-drinks,
+          ice-creams at a very cheaper price. We live by-
+          <span class="font-semibold"> Khaaiyen aur jee bhar k swadisht khana khilaayein</span> :)</p>
 
         <button
           type="button"
