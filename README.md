@@ -1,4 +1,5 @@
 # Foodstopshop 
+Hosted Link: https://foodstopshop.netlify.app/
 * This is a Food Delivery website. 
 * In this website, the customers can find every different category of the food items be it raw fruits, vegetables, vegetarian cooked meal, non vegetarian cooked meal, soft drinks and the dessert too.
 * It is built using React.js and Tailwind Css.
