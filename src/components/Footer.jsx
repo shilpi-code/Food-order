@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Footer = () => {
   return (
-    <footer class="p-6 bg-white dark:bg-gray-900 w-screen px-12">
+    <footer class="p-6 bg-white w-screen px-12">
       <div class="sm:flex sm:items-center sm:justify-between">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2022{" "}

@@ -6,7 +6,7 @@ import "../styles/contact.css";
 const ContactUs = () => {
   return (
     <section className="bg-white dark:bg-gray-900 w-full" id="contact-section">
-      <div className="hidden md:block py-8 px-12 bg-contactBg">
+      <div className="hidden md:block py-8 px-12 bg-orange-200">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white before:absolute before:rounded-lg">
           Contact Us
         </h2>
@@ -69,7 +69,7 @@ const ContactUs = () => {
         </div>
       </div>
       {/* For mobile view */}
-      <div class="py-2 lg:py-4 px-4 mx-auto md:hidden bg-contactBg pb-4">
+      <div class="py-2 lg:py-4 px-4 mx-auto md:hidden bg-orange-200 pb-4">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           Contact Us
         </h2>
