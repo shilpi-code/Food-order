@@ -7,14 +7,14 @@ Hosted Link: https://foodstopshop.netlify.app/
 
 ## Features of the Website
 * It has a header section displaying the 4 different links which redirects the user to the specific part of the website and a Cart along with the profile section of the customer. The customer can login to his account.
-* It has Create item feature using, only the shop owner can add new items in the website using that.
+* It has a Create item feature, only the shop owner can add new items in the website using that.
 * It has a Carousel. The customer can scroll in the left and right direction using it.
-* The customer can add any likable item to the cart. 
-* Clicking on the cart, it shows all the added items along with the total price. The customer can increase and decrease the items there too.
+* It provides the feature of adding any likable item to the cart. 
+* Clicking on the cart, it shows all the added items along with the total price.
 * It has a checkout page, after adding all the details, a customer can place an order.
-* The user can also logout from the website.
+* The customer can also logout from the account.
 * It has a Contact Us Section.
-* It also has a footer.
+* It has a footer.
 
 ### Landing Page
 <img src="./README_Images/Home.png" width=700>
